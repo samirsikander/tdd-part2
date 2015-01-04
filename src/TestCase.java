@@ -10,6 +10,7 @@ public class TestCase {
 	}
 	
 	public void run(WasRun test, String name) {
+		test.setUp();
 		Method[] methods = test.getClass().getDeclaredMethods();
 		for(Method method: methods){
 			if (method.getName().equals(name)){
@@ -27,5 +28,6 @@ public class TestCase {
 				}
 			}
 		}
+		test.tearDown();
 	}
 }
