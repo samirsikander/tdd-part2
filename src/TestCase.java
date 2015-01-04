@@ -18,15 +18,8 @@ public class TestCase {
 			if (method.getName().equals(name)){
 				try {
 					method.invoke(test, null);
-				} catch (IllegalArgumentException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IllegalAccessException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (InvocationTargetException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				} catch (Exception e){
+					result.testFailed();
 				}
 			}
 		}
