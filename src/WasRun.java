@@ -1,14 +1,19 @@
 
 public class WasRun extends TestCase{
 
-	String wasRun;	
+	String wasRun;
+	String wasSetUp;	
 
 	public WasRun(String name) {
 		super(name);
-		wasRun = "None";
 	}
 	
 	void testMethod(){
 		wasRun = "1";
+	}
+	
+	void setUp(){
+		wasRun = "None";
+		wasSetUp = "1";
 	}
 }

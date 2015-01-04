@@ -1,17 +1,24 @@
 
 public class TestCaseTest extends TestCase{
 
-	public static void main(String args[]){
-		WasRun test = new WasRun("testMethod");
-		System.out.println(test.wasRun.equals("None")?"False":"True");
-		test.run(test);
-		System.out.println(test.wasRun.equals("1")?"True":"False");
-		new TestCaseTest("testRunning").run(test);
-	}
-	
 	public TestCaseTest(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
 	}
 
+	static void testSetUp() {
+		WasRun test = new WasRun("setUp");
+		test.run(test, test.name);
+		System.out.println(test.wasSetUp.equals("1")?"True":"False");
+	}
+
+	static void testRunning(){
+		WasRun test = new WasRun("testMethod");
+		test.run(test, test.name);
+		System.out.println(test.wasRun.equals("1")?"True":"False");
+	}
+	
+	public static void main(String args[]){
+		testSetUp();
+		testRunning();
+	}
 }
