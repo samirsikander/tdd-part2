@@ -9,7 +9,9 @@ public class TestCase {
 		this.name = name;
 	}
 	
-	public void run(WasRun test, String name) {
+	public TestResult run(WasRun test, String name) {
+		TestResult result = new TestResult();
+		result.testStarted();
 		test.setUp();
 		Method[] methods = test.getClass().getDeclaredMethods();
 		for(Method method: methods){
@@ -29,5 +31,6 @@ public class TestCase {
 			}
 		}
 		test.tearDown();
+		return result;
 	}
 }
