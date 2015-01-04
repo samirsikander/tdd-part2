@@ -5,7 +5,7 @@ public class WasRun extends TestCase{
 	String wasSetUp;
 	StringBuffer log = new StringBuffer();
 
-	public WasRun(String name) {
+	WasRun(String name) {
 		super(name);
 	}
 	

@@ -9,7 +9,7 @@ public class TestCase {
 	}
 	
 	public TestResult run(WasRun test, String name , TestResult result) {
-		result.testStarted();	
+		result.testStarted();
 		test.setUp();
 		Method[] methods = test.getClass().getDeclaredMethods();
 		for(Method method: methods){
